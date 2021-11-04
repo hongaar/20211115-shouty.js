@@ -19,13 +19,12 @@ When('Sean shouts', function () {
 })
 
 When('Oscar shouts', function () {
-  // Write code here that turns the phrase above into concrete actions
-  return 'pending';
+  shouty.shout('Oscar', ARBITARY_MESSAGE)
 })
 
 Then('Lucy should not hear Oscar', function () {
-  // Write code here that turns the phrase above into concrete actions
-  return 'pending';
+  assert(!shouty.getShoutsHeardBy("Lucy").has("Oscar"))
+  // alternatively assert(!("Oscar" in shouty.getShoutsHeardBy("Lucy")))
 })
 
 Then('Lucy should hear Sean', function () {
