@@ -1,14 +1,14 @@
-const assert = require('assert')
-const Coordinate = require('../lib/coordinate')
+import assert from "assert"
+import "mocha"
+import Coordinate from "../lib/coordinate"
 
-describe('Coordinate', () => {
-
+describe("Coordinate", () => {
   it("should calculate the distance from itself", () => {
     const a = new Coordinate(0, 0)
     assert.strictEqual(a.distanceFrom(a), 0)
   })
 
-  it("should calculate the distance from another coordinate along X axis", ()=>{
+  it("should calculate the distance from another coordinate along X axis", () => {
     const a = new Coordinate(0, 0)
     const b = new Coordinate(600, 0)
 

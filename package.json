@@ -4,17 +4,17 @@
   "description": "Shouty exercise in JavaScript",
   "main": "index.js",
   "watch": {
-    "mocha": "{lib,test}/**/*.js",
+    "mocha": "{lib,test}/**/*.ts",
     "cucumber": {
       "patterns": [
         "lib",
         "features"
       ],
-      "extensions": "js,feature"
+      "extensions": "ts,feature"
     }
   },
   "scripts": {
-    "mocha": "mocha",
+    "mocha": "mocha --require ts-node/register --extension ts",
     "cucumber": "cucumber-js -f @cucumber/pretty-formatter",
     "test": "npm-run-all --silent -c mocha cucumber",
     "watch": "npm-watch"
@@ -36,8 +36,14 @@
   "devDependencies": {
     "@cucumber/cucumber": "7.3.1",
     "@cucumber/pretty-formatter": "1.0.0-alpha.1",
+    "@tsconfig/node16": "^1.0.2",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.6",
     "mocha": "9.1.3",
     "npm-run-all": "4.1.5",
-    "npm-watch": "0.11.0"
+    "npm-watch": "0.11.0",
+    "ts-node": "^10.4.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.4"
   }
 }
