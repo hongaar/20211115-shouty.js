@@ -9,3 +9,11 @@ After(function () {
   console.log("this is after")
 });
 
+Before(function () {
+  console.log("this is other before")
+})
+
+After(function () {
+  console.log("this is other after")
+});
+
