@@ -18,6 +18,16 @@ When('Sean shouts', function () {
   shouty.shout('Sean', ARBITARY_MESSAGE)
 })
 
+When('Oscar shouts', function () {
+  // Write code here that turns the phrase above into concrete actions
+  return 'pending';
+})
+
+Then('Lucy should not hear Oscar', function () {
+  // Write code here that turns the phrase above into concrete actions
+  return 'pending';
+})
+
 Then('Lucy should hear Sean', function () {
   assert.strictEqual(shouty.getShoutsHeardBy('Lucy').size, 1)
 })
