@@ -4,31 +4,26 @@ const Shouty = require('../../lib/shouty')
 const Coordinate = require('../../lib/coordinate')
 
 const ARBITARY_MESSAGE = 'Hello, world'
-let shouty
-
-Before(function() {
-  shouty = new Shouty()
-})
 
 When('{word} shouts', function (name) {
-  shouty.shout(name, ARBITARY_MESSAGE)
+  this.shouty.shout(name, ARBITARY_MESSAGE)
 })
 
 Then('Lucy should not hear Oscar', function () {
-  assert(!shouty.getShoutsHeardBy("Lucy").has("Oscar"))
-  // alternatively assert(!("Oscar" in shouty.getShoutsHeardBy("Lucy")))
+  assert(!this.shouty.getShoutsHeardBy("Lucy").has("Oscar"))
+  // alternatively assert(!("Oscar" in this.shouty.getShoutsHeardBy("Lucy")))
 })
 
 Then('Lucy should hear Sean', function () {
-  assert.strictEqual(shouty.getShoutsHeardBy('Lucy').size, 1)
+  assert.strictEqual(this.shouty.getShoutsHeardBy('Lucy').size, 1)
 })
 
 Then('Lucy should hear nothing', function () {
-  assert.strictEqual(shouty.getShoutsHeardBy('Lucy').size, 0)
+  assert.strictEqual(this.shouty.getShoutsHeardBy('Lucy').size, 0)
 })
 
 Then('Lucy should hear {int} shouts from Sean', function (expectedNumberOfShouts) {
-  let shoutsHeard = shouty.getShoutsHeardBy("Lucy");
+  let shoutsHeard = this.shouty.getShoutsHeardBy("Lucy");
   let shoutsByShouter = shoutsHeard.get("Sean")
   assert.strictEqual(shoutsByShouter.length, expectedNumberOfShouts)
 })
