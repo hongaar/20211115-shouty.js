@@ -14,12 +14,8 @@ Given('{word} is at {int}, {int}', function (name, x, y) {
   shouty.setLocation(name, new Coordinate(x, y))
 })
 
-When('Sean shouts', function () {
-  shouty.shout('Sean', ARBITARY_MESSAGE)
-})
-
-When('Oscar shouts', function () {
-  shouty.shout('Oscar', ARBITARY_MESSAGE)
+When('{word} shouts', function (name) {
+  shouty.shout(name, ARBITARY_MESSAGE)
 })
 
 Then('Lucy should not hear Oscar', function () {
