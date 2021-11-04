@@ -17,3 +17,6 @@ After(function () {
   console.log("this is other after")
 });
 
+Before({ tags: "@SpecialTest"}, function () {
+  console.log("this is special")
+})
