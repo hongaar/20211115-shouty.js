@@ -1,0 +1,11 @@
+const assert = require('assert')
+const { Before, After } = require('@cucumber/cucumber')
+
+Before(function () {
+  console.log("this is before")
+})
+
+After(function () {
+  console.log("this is after")
+});
+
