@@ -15,10 +15,10 @@ describe('Coordinate', () => {
     assert.strictEqual(a.distanceFrom(b), 600)
   })
 
-  // it("should calculate the distance from another coordinate", ()=>{
-  //   const a = new Coordinate(0, 0)
-  //   const b = new Coordinate(300, 400)
-  //
-  //   assert.strictEqual(a.distanceFrom(b), 500)
-  // })
+  it("should calculate the distance from another coordinate", ()=>{
+    const a = new Coordinate(0, 0)
+    const b = new Coordinate(300, 400)
+  
+    assert.strictEqual(a.distanceFrom(b), 500)
+  })
 })
