@@ -10,16 +10,6 @@ Before(function() {
   shouty = new Shouty()
 })
 
-Given('{word} is at {int}, {int}', function (name, x, y) {
-  shouty.setLocation(name, new Coordinate(x, y))
-})
-
-Given('people are located at', function (personLocations) {
-  personLocations.hashes().forEach(personLocation => {
-    shouty.setLocation(personLocation.name, new Coordinate(personLocation.x, personLocation.y))
-  })
-})
-
 When('{word} shouts', function (name) {
   shouty.shout(name, ARBITARY_MESSAGE)
 })
