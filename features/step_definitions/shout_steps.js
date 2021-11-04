@@ -14,6 +14,12 @@ Given('{word} is at {int}, {int}', function (name, x, y) {
   shouty.setLocation(name, new Coordinate(x, y))
 })
 
+Given('people are located at', function (personLocations) {
+  personLocations.hashes().forEach(personLocation => {
+    shouty.setLocation(personLocation.name, new Coordinate(personLocation.x, personLocation.y))
+  })
+})
+
 When('{word} shouts', function (name) {
   shouty.shout(name, ARBITARY_MESSAGE)
 })
@@ -29,4 +35,10 @@ Then('Lucy should hear Sean', function () {
 
 Then('Lucy should hear nothing', function () {
   assert.strictEqual(shouty.getShoutsHeardBy('Lucy').size, 0)
+})
+
+Then('Lucy should hear {int} shouts from Sean', function (expectedNumberOfShouts) {
+  let shoutsHeard = shouty.getShoutsHeardBy("Lucy");
+  let shoutsByShouter = shoutsHeard.get("Sean")
+  assert.strictEqual(shoutsByShouter.length, expectedNumberOfShouts)
 })
